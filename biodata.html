@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Biodata</title>
+    <style>
+        html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #F4EEFF;
+    background: linear-gradient(-135deg, #A6B1E1, #F4EEFF);
+}
+        hyml, body {
+            height: 100%;
+    margin: 0;
+    padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #F4EEFF;
+    background: linear-gradient(-135deg, #A6B1E1, #F4EEFF);
+        }
+        .biodata-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .profile-image {
+            flex: 1;
+            text-align: center;
+        }
+        .profile-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #424874;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .biodata-info {
+            flex: 2;
+            margin-left: 20px;
+        }
+        .biodata-info h1 {
+            font-size: 36px;
+            color: #424874;
+            margin-bottom: 20px;
+        }
+        .biodata-item {
+            margin-bottom: 15px;
+        }
+        .biodata-item label {
+            font-size: 18px;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .biodata-item p {
+            font-size: 16px;
+            margin: 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #424874;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #424874;
+        }
+    </style>
+</head>
+<body>
+    <div class="biodata-container">
+        <div class="profile-image">
+            <img src="img/profil.png" alt="Profile Picture">
+        </div>
+        <div class="biodata-info">
+            <h1>AGIS NUR VITRIANTI</h1>
+            <div class="biodata-item">
+                <label for="class">Kelas:</label>
+                <p id="class">12 RPL 3</p>
+            </div>
+            <div class="biodata-item">
+                <label for="address">Alamat:</label>
+                <p id="address">Maja, Majalengka</p>
+            </div>
+            <div class="biodata-item">
+                <label for="phone">No Handphone:</label>
+                <p id="phone">+62 8953 8417 2931</p>
+            </div>
+            <div class="biodata-item">
+                <label for="email">Email:</label>
+                <p id="email">vitrianti001@gmail.com</p>
+            </div>
+            <!-- Back Button -->
+            <button class="back-button" onclick="goBack()">Kembali</button>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

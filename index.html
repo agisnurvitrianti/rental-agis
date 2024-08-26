@@ -1,0 +1,191 @@
+<?php
+include 'koneksi.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Utama Rental Mobil</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: url('img/mobil2.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            z-index: 2;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            animation: fadeInDown 1.5s ease-in-out;
+            color: black;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 1.5s ease-in-out;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            background-color: #5f84a2;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px 20px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+           
+        }
+
+        .button:hover {
+            background-color: #91aec4;
+            transform: translateY(-5px);
+           
+        }
+
+        .logout {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            padding: 10px 20px;
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            z-index: 2;
+        }
+
+        .logout:hover {
+            background-color: rgba(255, 0, 0, 1);
+        }
+
+        .car-container {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            animation: drive 8s linear infinite;
+        }
+
+        .road {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: url('img/road.png') repeat-x;
+            background-size: cover;
+            z-index: 0;
+            animation: moveRoad 4s linear infinite;
+        }
+
+        .car {
+            width: 200px;
+            height: auto;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes drive {
+            0% {
+                left: -300px;
+            }
+            50% {
+                left: calc(100% - 300px);
+            }
+            100% {
+                left: -300px;
+            }
+        }
+
+        @keyframes moveRoad {
+            from {
+                background-position: 0;
+            }
+            to {
+                background-position: -1000px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .car {
+                width: 150px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Car Rental</h1>
+        <div class="buttons">
+            <a href="datamobil.php" class="button">Data Mobil</a>
+            <a href="datacostumer.php" class="button">Data Customer</a>
+            <a href="transaksi.php" class="button">Transaksi</a>
+            <a href="kategori.php" class="button">Kategori</a>
+            <a href="biodata.html" class="button">Biodata</a>
+        </div>
+        <a href="logout.php" class="logout">Logout</a>
+    </div>
+    
+    <div class="car-container">
+        <img src="img/car.png" alt="Car" class="car">
+    </div>
+    
+    <div class="road"></div>
+</body>
+</html>

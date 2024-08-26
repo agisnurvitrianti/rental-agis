@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewa Sekarang</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7; /* Warna latar belakang */
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .form-group input[type="submit"] {
+            background-color: #007bff; /* Warna biru */
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: calc(100% - 22px);
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .form-group .cancel-button {
+            background-color: #f44336; /* Warna merah */
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            width: calc(100% - 22px);
+        }
+        .form-group .cancel-button:hover {
+            background-color: #c62828;
+        }
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 2px solid #007bff;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                width: 100%;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .form-group label, .form-group input, .form-group select, .form-group textarea {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Sewa Mobil Sekarang</h1>
+        </div>
+        <form action="berhasil.html" method="post">
+            <div class="form-group">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Nomor Telepon:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor telepon Anda" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+            </div>
+            <div class="form-group">
+                <label for="payment">Pilih Metode Pembayaran:</label>
+                <select id="payment" name="payment" required>
+                    <option value="">Pilih metode pembayaran</option>
+                    <option value="credit-card">Kartu Kredit</option>
+                    <option value="bank-transfer">Transfer Bank</option>
+                    <option value="e-wallet">E-Wallet (OVO, GoPay, dll.)</option>
+                    <option value="cash">Tunai</option>
+                    <!-- Tambahkan opsi pembayaran lainnya di sini -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="rental-date">Tanggal Sewa:</label>
+                <input type="date" id="rental-date" name="rental_date" required>
+            </div>
+            <div class="form-group">
+                <label for="return-date">Tanggal Kembali:</label>
+                <input type="date" id="return-date" name="return_date" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Pesan Tambahan:</label>
+                <textarea id="message" name="message" placeholder="Masukkan pesan tambahan (opsional)"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kirim Pemesanan">
+                <button type="button" class="cancel-button" onclick="window.history.back()">Batal</button>
+            </div>
+        </form>
+        <div class="footer">
+            <p>Terima kasih telah mempercayakan perjalanan Anda kepada kami!</p>
+        </div>
+    </div>
+</body>
+</html>
